@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+
+  mongo_db:
+    container_name: mongoContainer
+    image: mongo:latest
+    restart: on-failure
+    volumes:
+      - mongo_db://data/db
+
+  api:
+    build: .
+    ports:
+      - 4000:4000
+    environment:
+      PORT: 4000
+      MONGODB_URI: mongodb://mongo_db:27017
+      DB_NAME: mission_six_db
+      NAME: Vin
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongo_db: {}

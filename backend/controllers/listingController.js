@@ -1,15 +1,26 @@
 const asyncHandler = require("express-async-handler")
 
+const Listing = require("../models/listingModel")
+
 const getListings = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: "Get property listings" })
+    const listings = await Listing.find()
+    res.status(200).json(listings)
 })
 
-const createListing = asyncHandler(async (req, res) => {
-    if (!req.body.text) {
-        res.status(400)
-        throw new Error("Please add a text field")
-    }
-    res.status(200).json({ message: "Create property listings" })
+const createListing = asyncHandler(async (req, res, next) => {
+    const listing = new Listing({
+        name: req.body.name,
+        style: req.body.style,
+    })
+    listing
+        .save()
+        .then((result) => {
+            console.log(result)
+            res.send(result)
+        })
+        .catch((err) => {
+            console.log(err.message)
+        })
 })
 
 const updateListing = asyncHandler(async (req, res) => {

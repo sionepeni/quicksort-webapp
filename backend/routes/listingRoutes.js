@@ -7,7 +7,8 @@ const {
     deleteListing,
 } = require("../controllers/listingController")
 
-router.route("/").get(getListings).post(createListing)
+router.route("/").get(getListings)
+router.route("/").post(createListing)
 
 router.route("/:id").delete(deleteListing).put(updateListing)
 
