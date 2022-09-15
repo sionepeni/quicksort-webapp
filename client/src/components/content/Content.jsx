@@ -6,6 +6,7 @@ import Figures from "./Figures"
 
 export default function Content() {
     const [productData, setProductData] = useState([])
+    const [btnSelected, setBtnSelected] = useState("res")
 
     useEffect(() => {
         reset()
@@ -28,6 +29,10 @@ export default function Content() {
             setProductData(res.data)
         })
     }
+
+    const selectedBtn = (e) => {
+        setBtnSelected(e.target.value)
+    } 
 
     const styles = {
         border: `2px solid black`,
@@ -53,9 +58,9 @@ export default function Content() {
                 </div>
             </Card>
             <div className="content-btns">
-            <button onClick={ascending}>Ascending</button>
-            <button onClick={reset}>Reset</button>
-            <button onClick={descending}>Descending</button>
+            <button value="asc" className={btnSelected === "asc" ? "btn-selected" : ""} onClick={ascending} onClickCapture={selectedBtn}>Ascending</button>
+            <button value="res" className={btnSelected === "res" ? "btn-selected" : ""} onClick={reset} onClickCapture={selectedBtn}>Reset</button>
+            <button value="dsc" className={btnSelected === "dsc" ? "btn-selected" : ""} onClick={descending} onClickCapture={selectedBtn}>Descending</button>
             </div>
         </>
     )
