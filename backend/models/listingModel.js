@@ -7,13 +7,13 @@ const listingSchema = new Schema(
     {
         name: {
             type: String,
-            required: true,
-        },
-        style: {
-            type: String,
             required: false,
         },
-        color: {
+        Price: {
+            type: String,
+            required: true,
+        },
+        quantity: {
             type: String,
             required: false,
         },

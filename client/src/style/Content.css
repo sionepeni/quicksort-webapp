@@ -1,0 +1,50 @@
+.content-main {
+  text-align: center;
+  margin: auto;
+  height: 100%;
+  overflow: scroll;
+}
+.content-main::-webkit-scrollbar {
+  display: none;
+}
+.content-main h3 {
+  padding: 4rem;
+}
+
+.content-btns {
+  margin-top: 2rem;
+}
+.content-btns button {
+  margin-left: 2rem;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  height: 2rem;
+  width: fit-content;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 2rem;
+  border: 2px solid black;
+}
+.content-btns button:hover {
+  background-color: rgba(0, 102, 255, 0.947);
+  color: white;
+  cursor: pointer;
+}
+.content-btns .btn-selected {
+  background-color: rgba(0, 102, 255, 0.947);
+  color: white;
+}
+
+.figures-main {
+  border: 1px solid black;
+  display: flex;
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+.figures-main img {
+  border-radius: 15px;
+}

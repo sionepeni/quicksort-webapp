@@ -2,14 +2,12 @@ const express = require("express")
 const router = express.Router()
 const {
     getListings,
-    createListing,
-    updateListing,
-    deleteListing,
+    getSortedProducts,
+    getSortedDes,
 } = require("../controllers/listingController")
 
 router.route("/").get(getListings)
-router.route("/").post(createListing)
-
-router.route("/:id").delete(deleteListing).put(updateListing)
+router.route("/quicksort").get(getSortedProducts)
+router.route("/quicksortdes").get(getSortedDes)
 
 module.exports = router

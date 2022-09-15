@@ -1,3 +1,5 @@
+import '../../style/Card.css'
+
 export default function Card({
     children,
     border,
@@ -13,6 +15,9 @@ export default function Card({
     display,
     align,
     className,
+    marginInline,
+    top,
+    radius
 }) {
     let name = `reusable-master ${className}`
     return (
@@ -31,6 +36,9 @@ export default function Card({
                     backgroundColor: bgColor,
                     display: display,
                     alignContent: align,
+                    marginInline: marginInline,
+                    top: top,
+                    borderRadius: radius
                 }}
                 className={name}
             >

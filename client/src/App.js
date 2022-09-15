@@ -1,10 +1,13 @@
 import "./App.css"
-import Card from "./components/utility/Card"
+import Content from "./components/content/Content"
 
 function App() {
     return (
         <>
-            <Card>hello</Card>
+            <div className="app">
+                <h1>Quicksort Web App</h1>
+                <Content />
+            </div>
         </>
     )
 }
