@@ -1,4 +1,4 @@
-# quixksort-webapp
+# quicksort-webapp
 
 Trying to use the Quicksort algorithm in a basic React web app connected to MongoDB.
 
